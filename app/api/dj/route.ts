@@ -10,11 +10,13 @@ export async function GET() {
     const fileContents = await readFile(filePath, 'utf8');
     const schedule = JSON.parse(fileContents);
     
+    // Get current time in your timezone (Europe/Amsterdam)
     const now = new Date();
+    const localTime = new Date(now.toLocaleString('en-US', { timeZone: 'Europe/Amsterdam' }));
     
     // Get current day
     const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-    const currentDay = days[now.getDay()];
+    const currentDay = days[localTime.getDay()];
     
     // Weekend check
     if (currentDay === 'saturday' || currentDay === 'sunday') {
@@ -22,7 +24,7 @@ export async function GET() {
     }
     
     // Get current time in minutes
-    const currentMinutes = now.getHours() * 60 + now.getMinutes();
+    const currentMinutes = localTime.getHours() * 60 + localTime.getMinutes();
     
     // Get day schedule directly (no week wrapper)
     const daySchedule = schedule[currentDay];
@@ -45,7 +47,8 @@ export async function GET() {
         return NextResponse.json({ 
           dj: djList.length > 0 ? djList : null,
           timeSlot: timeSlot,
-          day: currentDay
+          day: currentDay,
+          localTime: localTime.toLocaleTimeString('en-US', { timeZone: 'Europe/Amsterdam', hour12: false })
         });
       }
     }
@@ -53,7 +56,8 @@ export async function GET() {
     // Outside broadcast hours
     return NextResponse.json({ 
       dj: null,
-      message: 'No DJ scheduled at this time'
+      message: 'No DJ scheduled at this time',
+      localTime: localTime.toLocaleTimeString('en-US', { timeZone: 'Europe/Amsterdam', hour12: false })
     });
     
   } catch (error) {
