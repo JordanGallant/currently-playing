@@ -35,7 +35,6 @@ export async function GET() {
     
     // Check each time slot
     for (const [timeSlot, djs] of Object.entries(daySchedule)) {
-      // Skip the date field
       if (timeSlot === 'date') continue;
       
       const [start, end] = timeSlot.split('-');
