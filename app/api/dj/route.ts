@@ -35,6 +35,9 @@ export async function GET() {
     
     // Check each time slot
     for (const [timeSlot, djs] of Object.entries(daySchedule)) {
+      // Skip the date field
+      if (timeSlot === 'date') continue;
+      
       const [start, end] = timeSlot.split('-');
       const [startHour, startMin] = start.split(':').map(Number);
       const [endHour, endMin] = end.split(':').map(Number);
@@ -68,4 +71,3 @@ export async function GET() {
     }, { status: 500 });
   }
 }
-//
