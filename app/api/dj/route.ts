@@ -5,32 +5,58 @@ import path from 'path';
 
 export async function GET() {
   try {
-    // Read the JSON file
+    // Read the JSON file from public directory
     const filePath = path.join(process.cwd(), 'public', 'dj.json');
     const fileContents = await readFile(filePath, 'utf8');
     const schedule = JSON.parse(fileContents);
     
-    // Get current time in your timezone (Europe/Amsterdam)
+    // Get current time in Europe/Amsterdam timezone using Intl API
     const now = new Date();
-    const localTime = new Date(now.toLocaleString('en-US', { timeZone: 'Europe/Amsterdam' }));
     
-    // Get current day
+    const formatter = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Europe/Amsterdam',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    });
+    
+    const parts = formatter.formatToParts(now);
+    const getValue = (type: string) => parts.find(p => p.type === type)?.value || '0';
+    
+    const day = parseInt(getValue('day'));
+    const month = parseInt(getValue('month'));
+    const hour = parseInt(getValue('hour'));
+    const minute = parseInt(getValue('minute'));
+    
+    // Create a proper date object for Amsterdam timezone
+    const year = parseInt(getValue('year'));
+    const amsterdamDate = new Date(year, month - 1, day, hour, minute);
+    
+    // Get current day name
     const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-    const currentDay = days[localTime.getDay()];
+    const currentDay = days[amsterdamDate.getDay()];
     
-    // Weekend check
-    if (currentDay === 'sunday') {
-      return NextResponse.json({ dj: null, message: 'No schedule on Sunday' });
-    }
+    // Get current date in DD/MM format
+    const currentDate = `${String(day).padStart(2, '0')}/${String(month).padStart(2, '0')}`;
     
-    // Get current time in minutes
-    const currentMinutes = localTime.getHours() * 60 + localTime.getMinutes();
+    // Get current time in minutes since midnight
+    const currentMinutes = hour * 60 + minute;
     
-    // Get day schedule directly (no week wrapper)
+    // Get day schedule
     const daySchedule = schedule[currentDay];
     
     if (!daySchedule) {
-      return NextResponse.json({ dj: null, message: 'No schedule for today' });
+      return NextResponse.json({ 
+        dj: null,
+        message: 'No schedule for today',
+        currentTime: `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`,
+        currentDay: currentDay,
+        currentDate: currentDate
+      });
     }
     
     // Check each time slot
@@ -45,12 +71,13 @@ export async function GET() {
       const endTime = endHour * 60 + endMin;
       
       if (currentMinutes >= startTime && currentMinutes < endTime) {
-        const djList = djs as string[];
         return NextResponse.json({ 
-          dj: djList.length > 0 ? djList : null,
+          dj: djs,
           timeSlot: timeSlot,
           day: currentDay,
-          localTime: localTime.toLocaleTimeString('en-US', { timeZone: 'Europe/Amsterdam', hour12: false })
+          date: daySchedule.date,
+          currentTime: `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`,
+          currentDate: currentDate
         });
       }
     }
@@ -59,14 +86,17 @@ export async function GET() {
     return NextResponse.json({ 
       dj: null,
       message: 'No DJ scheduled at this time',
-      localTime: localTime.toLocaleTimeString('en-US', { timeZone: 'Europe/Amsterdam', hour12: false })
+      currentTime: `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`,
+      currentDay: currentDay,
+      currentDate: currentDate
     });
     
   } catch (error) {
     console.error('Error reading schedule:', error);
     return NextResponse.json({ 
       dj: null, 
-      error: 'Failed to read schedule' 
+      error: 'Failed to read schedule',
+      details: error instanceof Error ? error.message : 'Unknown error'
     }, { status: 500 });
   }
 }
