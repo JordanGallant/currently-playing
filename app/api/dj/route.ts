@@ -19,8 +19,8 @@ export async function GET() {
     const currentDay = days[localTime.getDay()];
     
     // Weekend check
-    if (currentDay === 'saturday' || currentDay === 'sunday') {
-      return NextResponse.json({ dj: null, message: 'No schedule on weekends' });
+    if (currentDay === 'sunday') {
+      return NextResponse.json({ dj: null, message: 'No schedule on Sunday' });
     }
     
     // Get current time in minutes
