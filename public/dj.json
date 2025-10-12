@@ -1,27 +1,27 @@
 {
   "monday": {
     "date": "06/10",
-    "14:30-16:00": ["Andres"],
+    "14:30-16:00": ["Rugile"],
     "16:00-17:30": ["Koen"],
     "17:30-19:00": ["Will"]
   },
   "tuesday": {
     "date": "07/10",
-    "14:30-16:00": ["Alula"],
-    "16:00-17:30": ["Jack"],
+    "14:30-16:00": ["Rozerin & Priya"],
+    "16:00-17:30": ["Lia"],
     "17:30-19:00": ["Alec"]
   },
   "wednesday": {
     "date": "08/10",
-    "14:30-16:00": ["Alec"],
-    "16:00-17:30": ["Much"],
-    "17:30-19:00": ["Sheps"]
+    "14:30-16:00": ["Empty Slot"],
+    "16:00-17:30": ["Slim Audio Team"],
+    "17:30-19:00": ["Slim Events Team"]
   },
   "thursday": {
     "date": "09/10",
-    "14:30-16:00": ["Antonin"],
+    "14:30-16:00": ["Patrick"],
     "16:00-17:30": ["Valentyna"],
-    "17:30-19:00": ["Mia"]
+    "17:30-19:00": ["ACCESS (Natalie, Jaap, Scott, and Mike)"]
   },
   "friday": {
     "date": "10/10",
@@ -31,6 +31,6 @@
   },
   "saturday": {
     "date": "11/10",
-    "14:15-16:00": ["SLIM INVITES #15 VIKI"]
+    "14:15-16:00": ["SLIM INVITES #16 "]
   }
 }
