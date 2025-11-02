@@ -1,36 +1,36 @@
 {
   "monday": {
-    "date": "06/10",
+    "date": "03/11",
     "14:30-16:00": ["Andres | Hermeneutics - Season 2"],
     "16:00-17:30": ["Koen | Jacquerie, a communal uprising"],
     "17:30-19:00": ["Will | The Windridge Experience"]
   },
   "tuesday": {
-    "date": "07/10",
+    "date": "04/11",
     "14:30-16:00": ["Alula | Bosom to Booty"],
     "16:00-17:30": ["Swanni |Sending Synths Over Space"],
     "17:30-19:00": ["jgsleepwithme | Sleepy Show "]
   },
   "wednesday": {
-    "date": "08/10",
+    "date": "05/11",
     "14:30-16:00": [" "],
     "16:00-17:30": [""],
     "17:30-19:00": ["Sheps |Shep's Selections"]
   },
   "thursday": {
-    "date": "09/10",
+    "date": "06/11",
     "14:30-16:00": ["Tonda |Double Exposure"],
     "16:00-17:30": [""],
     "17:30-19:00": ["miimii | Miimii's ra-ra show"]
   },
   "friday": {
-    "date": "10/10",
+    "date": "07/11",
     "14:30-16:00": ["Dr.Giggle | Workshop on Recursive Futures"],
     "16:00-17:30": ["BRUD"],
     "17:30-19:00": ["uğur|no step no grab"]
   },
   "saturday": {
-    "date": "11/10",
+    "date": "08/11",
     "14:15-16:00": ["SLIM INVITES #16 "]
   }
 }
