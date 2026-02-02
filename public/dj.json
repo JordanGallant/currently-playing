@@ -1,10 +1,10 @@
 
 {
-"monday": {
-  "date": "06/10",
-  "14:30-16:00": ["rue| cultured?"],
-  "16: 00-17:30": ["Koen | Jacquerie, a communal uprising"],
-  "17:30-19:00": ["Will | The Windridge Experience"]
+  "monday": {
+    "date": "06/10",
+    "14:30-16:00": ["rue| cultured?"],
+    "16:00-17:30": ["Koen | Jacquerie, a communal uprising"],
+    "17:30-19:00": ["Will | The Windridge Experience"]
   },
   "tuesday": {
     "date": "07/10",
