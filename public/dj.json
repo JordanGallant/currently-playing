@@ -1,34 +1,34 @@
 
 {
-  "monday": {
-    "date": "26/01",
-    "14:30-16:00": ["Andres | Hermeneutics - Season 2"],
-    "16:00-17:30": ["Koen | Jacquerie, a communal uprising"],
-    "17:30-19:00": ["Will | The Windridge Experience"]
+"monday": {
+  "date": "06/10",
+  "14:30-16:00": ["rue| cultured?"],
+  "16: 00-17:30": ["Koen | Jacquerie, a communal uprising"],
+  "17:30-19:00": ["Will | The Windridge Experience"]
   },
   "tuesday": {
-    "date": "27/01",
-    "14:30-16:00": ["Dr.Giggle | Workshop on Recursive Futures"],
-    "16:00-17:30": ["who knows | Ræverie"],
-    "17:30-19:00": ["jgsleepwithme | Sleepy Show "]
+    "date": "07/10",
+    "14:30-16:00": ["Rozerin & Priya | Afterhours FM"],
+    "16:00-17:30": [""],
+    "17:30-19:00": ["Controla | After Dark "]
   },
   "wednesday": {
-    "date": "28/01",
-    "14:30-16:00": ["DJ ALTER | ALTERnation"],
-    "16:00-17:30": ["Stefan & Dragos | Concrete Soapbox"],
-    "17:30-19:00": ["Sheps | Shep's Selections"]
+    "date": "08/10",
+    "14:30-16:00": [" "],
+    "16:00-17:30": ["Sarp"],
+    "17:30-19:00": ["Slim Events Team"]
   },
   "thursday": {
-    "date": "29/01",
-    "14:30-16:00": ["Tonda | Double Exposure"],
-    "16:00-17:30": ["Aga7 | Synchronicity"],
-    "17:30-19:00": ["miimii | Miimii's ra-ra show"]
+    "date": "09/10",
+    "14:30-16:00": ["Hannah |The Conversation Club"],
+    "16:00-17:30": ["djka leva | Electronna"],
+    "17:30-19:00": ["Strug | Frequency Frontier"]
   },
   "friday": {
-    "date": "30/01",
-    "14:30-16:00": ["Alula | Bosom to Booty"],
-    "16:00-17:30": ["Alec | After Dark"],
-    "17:30-19:00": ["uğur | no step no grab"]
+    "date": "10/10"
+    "14:30-16:00": ["Dr.Giggle | Workshop on Recursive Futures"],
+    "16:00-17:30": ["Brick & Bor | At the Edge of the World"],
+    "17:30-19:00": ["oernaut | no step no grab"]
   },
 
   "saturday": {
