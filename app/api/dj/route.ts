@@ -50,13 +50,19 @@ export async function GET() {
     const daySchedule = schedule[currentDay];
     
     if (!daySchedule) {
-      return NextResponse.json({ 
+      const response = NextResponse.json({ 
         dj: null,
         message: 'No schedule for today',
         currentTime: `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`,
         currentDay: currentDay,
         currentDate: currentDate
       });
+      
+      response.headers.set('Access-Control-Allow-Origin', '*');
+      response.headers.set('Access-Control-Allow-Methods', 'GET, OPTIONS');
+      response.headers.set('Access-Control-Allow-Headers', 'Content-Type');
+      
+      return response;
     }
     
     // Check each time slot
@@ -71,7 +77,7 @@ export async function GET() {
       const endTime = endHour * 60 + endMin;
       
       if (currentMinutes >= startTime && currentMinutes < endTime) {
-        return NextResponse.json({ 
+        const response = NextResponse.json({ 
           dj: djs,
           timeSlot: timeSlot,
           day: currentDay,
@@ -79,11 +85,17 @@ export async function GET() {
           currentTime: `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`,
           currentDate: currentDate
         });
+        
+        response.headers.set('Access-Control-Allow-Origin', '*');
+        response.headers.set('Access-Control-Allow-Methods', 'GET, OPTIONS');
+        response.headers.set('Access-Control-Allow-Headers', 'Content-Type');
+        
+        return response;
       }
     }
     
     // Outside broadcast hours
-    return NextResponse.json({ 
+    const response = NextResponse.json({ 
       dj: null,
       message: 'No DJ scheduled at this time',
       currentTime: `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`,
@@ -91,12 +103,31 @@ export async function GET() {
       currentDate: currentDate
     });
     
+    response.headers.set('Access-Control-Allow-Origin', '*');
+    response.headers.set('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    response.headers.set('Access-Control-Allow-Headers', 'Content-Type');
+    
+    return response;
+    
   } catch (error) {
     console.error('Error reading schedule:', error);
-    return NextResponse.json({ 
+    const errorResponse = NextResponse.json({ 
       dj: null, 
       error: 'Failed to read schedule',
       details: error instanceof Error ? error.message : 'Unknown error'
     }, { status: 500 });
+    
+    errorResponse.headers.set('Access-Control-Allow-Origin', '*');
+    errorResponse.headers.set('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    errorResponse.headers.set('Access-Control-Allow-Headers', 'Content-Type');
+    
+    return errorResponse;
   }
 }
+
+export async function OPTIONS() {
+  const response = new NextResponse(null, { status: 200 });
+  response.headers.set('Access-Control-Allow-Origin', '*');
+  response.headers.set('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  response.headers.set('Access-Control-Allow-Headers', 'Content-Type');
+  return resp
