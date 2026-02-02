@@ -1,4 +1,3 @@
-
 {
   "monday": {
     "date": "06/10",
@@ -25,12 +24,11 @@
     "17:30-19:00": ["Strug | Frequency Frontier"]
   },
   "friday": {
-    "date": "10/10"
+    "date": "10/10",
     "14:30-16:00": ["Dr.Giggle | Workshop on Recursive Futures"],
     "16:00-17:30": ["Brick & Bor | At the Edge of the World"],
     "17:30-19:00": ["oernaut | no step no grab"]
   },
-
   "saturday": {
     "date": "11/10",
     "14:15-16:00": ["SLIM INVITES #16 "]
