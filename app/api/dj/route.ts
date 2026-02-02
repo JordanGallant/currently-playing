@@ -1,16 +1,14 @@
-// app/api/current-dj/route.ts
+// app/api/dj/route.ts
 import { NextResponse } from 'next/server';
 import { readFile } from 'fs/promises';
 import path from 'path';
 
 export async function GET() {
   try {
-    // Read the JSON file from public directory
     const filePath = path.join(process.cwd(), 'public', 'dj.json');
     const fileContents = await readFile(filePath, 'utf8');
     const schedule = JSON.parse(fileContents);
     
-    // Get current time in Europe/Amsterdam timezone using Intl API
     const now = new Date();
     
     const formatter = new Intl.DateTimeFormat('en-US', {
@@ -31,22 +29,14 @@ export async function GET() {
     const month = parseInt(getValue('month'));
     const hour = parseInt(getValue('hour'));
     const minute = parseInt(getValue('minute'));
-    
-    // Create a proper date object for Amsterdam timezone
     const year = parseInt(getValue('year'));
-    const amsterdamDate = new Date(year, month - 1, day, hour, minute);
     
-    // Get current day name
+    const amsterdamDate = new Date(year, month - 1, day, hour, minute);
     const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
     const currentDay = days[amsterdamDate.getDay()];
-    
-    // Get current date in DD/MM format
     const currentDate = `${String(day).padStart(2, '0')}/${String(month).padStart(2, '0')}`;
-    
-    // Get current time in minutes since midnight
     const currentMinutes = hour * 60 + minute;
     
-    // Get day schedule
     const daySchedule = schedule[currentDay];
     
     if (!daySchedule) {
@@ -65,7 +55,6 @@ export async function GET() {
       return response;
     }
     
-    // Check each time slot
     for (const [timeSlot, djs] of Object.entries(daySchedule)) {
       if (timeSlot === 'date') continue;
       
@@ -94,7 +83,6 @@ export async function GET() {
       }
     }
     
-    // Outside broadcast hours
     const response = NextResponse.json({ 
       dj: null,
       message: 'No DJ scheduled at this time',
@@ -110,7 +98,6 @@ export async function GET() {
     return response;
     
   } catch (error) {
-    console.error('Error reading schedule:', error);
     const errorResponse = NextResponse.json({ 
       dj: null, 
       error: 'Failed to read schedule',
@@ -130,4 +117,5 @@ export async function OPTIONS() {
   response.headers.set('Access-Control-Allow-Origin', '*');
   response.headers.set('Access-Control-Allow-Methods', 'GET, OPTIONS');
   response.headers.set('Access-Control-Allow-Headers', 'Content-Type');
-  return resp
+  return response;
+}
