@@ -1,36 +1,83 @@
 {
-        "monday": {
-    "date": "06/10",
-    "14:30-16:00": [""],
-    "16:00-17:30": ["Koen | Jacquerie, a communal uprising"],
-    "17:30-19:00": ["Will | The Windridge Experience"]
-  },
-  "tuesday": {
-    "date": "07/10",
-    "14:30-16:00": ["Stefan & Dragos | Concrete Soapbox"],
-    "16:00-17:30": ["Lia| Through the Rabbit Hole with Lia"],
-    "17:30-19:00": ["Controla | After Dark "]
-  },
-  "wednesday": {
-    "date": "08/10",
-    "14:30-16:00": ["TAKLACI | Turkish Delight"],
-    "16:00-17:30": ["Miss Pia | Groove Garden"],
-    "17:30-19:00": ["DouLou | DouLou's dustbin"]
-  },
-  "thursday": {
-    "date": "09/10",
-    "14:30-16:00": [""],
-    "16:00-17:30": [""],
-    "17:30-19:00": ["Strug | Frequency Frontier"]
-  },
-  "friday": {
-    "date": "10/10",
-    "14:30-16:00": ["Aga7 | Synchronicity"],
-    "16:00-17:30": ["Brick & Bor | At the Edge of the World"],
-    "17:30-19:00": ["oernaut | no step no grab"]
-  },
-  "saturday": {
-    "date": "11/10",
-    "14:15-16:00": ["SLIM INVITES #16 "]
+  "note": "Biweekly schedule. Week DUCK starts on anchorMonday, week GOOSE the Monday after, then it repeats.",
+  "anchorMonday": "2026-09-21",
+  "arriveEarlyMinutes": 15,
+  "weeks": {
+    "duck": {
+      "tuesday": {
+        "supervision": {
+          "12:30-16:00": "Alec",
+          "16:00-19:30": "Alec"
+        },
+        "slots": {
+          "13:00-14:30": ["Alula Bird | Bosom to Booty"],
+          "14:30-16:00": ["Alec van der Vliet | After Dark"],
+          "16:00-17:30": ["Richard tenge-rietberg | Xtrapuls Radio"],
+          "17:30-19:00": ["Joana Caseiro | Virtuous & Vicious"]
+        }
+      },
+      "wednesday": {
+        "supervision": {
+          "12:30-16:00": "Emilis",
+          "16:00-19:30": "Pawel"
+        },
+        "slots": {
+          "13:00-14:30": ["Bianca Bassani | Wang Dang Route 66"],
+          "14:30-16:00": ["Thomas & Bor | Low Entropy w/ Brick & Bor"],
+          "16:00-17:30": ["Victor & Sven | The Kraanspoorian Soundscape"],
+          "17:30-19:00": ["Tomás Monge Mateus | Frequency Frontier"]
+        }
+      },
+      "thursday": {
+        "supervision": {
+          "12:30-16:00": "Vova",
+          "16:00-19:30": "Antonin"
+        },
+        "slots": {
+          "13:00-14:30": ["Luc Koelmans | Echo Chamber"],
+          "14:30-16:00": ["Stefan & Dragos | Concrete Soapbox"],
+          "16:00-17:30": ["Grace Winn | Sobriety Implant"],
+          "17:30-19:00": ["Antonín Tesař | Double Exposure"]
+        }
+      }
+    },
+    "goose": {
+      "tuesday": {
+        "supervision": {
+          "12:30-16:00": "Nikolina",
+          "16:00-19:30": "Zosia"
+        },
+        "slots": {
+          "13:00-14:30": ["Marco Macciocu | We Love Wax"],
+          "14:30-16:00": ["Koen Harmusial | Jacquerie"],
+          "16:00-17:30": ["Nikolina Carter | Baiting the Scene"],
+          "17:30-19:00": ["Paulo Suljic | Nuff Talk"]
+        }
+      },
+      "wednesday": {
+        "supervision": {
+          "12:30-16:00": "Lora",
+          "16:00-19:30": "Adon"
+        },
+        "slots": {
+          "13:00-14:30": ["Petar Larmour | All Killer No Filler"],
+          "14:30-16:00": ["Estelle Derraj | Midnight Request Line w/ e5telll3"],
+          "16:00-17:30": ["Ugur Bayat | No Step No Grab"],
+          "17:30-19:00": ["Carlota Brito | Funk you up"]
+        }
+      },
+      "thursday": {
+        "supervision": {
+          "12:30-16:00": "Gio",
+          "16:00-19:30": "Vicky"
+        },
+        "slots": {
+          "13:00-14:30": ["Niall Donnelly | Bangers at every BPM"],
+          "14:30-16:00": ["Hannah Rinne | The Conversation Club"],
+          "16:00-17:30": ["Paweł Bitel | Two Geniuses"],
+          "17:30-19:00": ["Vicky Gao | Serenade Selections w/ Vixx"]
+        }
+      }
+    }
   }
 }
