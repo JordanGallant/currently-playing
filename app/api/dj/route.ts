@@ -8,9 +8,16 @@ type DaySchedule = {
   slots: Record<string, string[]>;
 };
 
+type Override = {
+  dj: string[];
+  // Amsterdam wall clock, 'YYYY-MM-DDTHH:MM'. The override stops applying at this moment.
+  until: string;
+};
+
 type Schedule = {
   anchorMonday: string;
   arriveEarlyMinutes?: number;
+  override?: Override;
   weeks: Record<string, Record<string, DaySchedule>>;
 };
 
@@ -27,6 +34,19 @@ function withCors<T extends NextResponse>(response: T): T {
 function toMinutes(time: string) {
   const [hour, minute] = time.split(':').map(Number);
   return hour * 60 + minute;
+}
+
+// Both sides are Amsterdam wall clock, so comparing them as YYYYMMDDHHMM
+// sidesteps timezone and DST conversions entirely.
+function stamp(year: number, month: number, day: number, hour: number, minute: number) {
+  return ((year * 100 + month) * 100 + day) * 10000 + hour * 100 + minute;
+}
+
+function overrideStamp(until: string) {
+  const [date, time = '00:00'] = until.split('T');
+  const [year, month, day] = date.split('-').map(Number);
+  const [hour, minute] = time.split(':').map(Number);
+  return stamp(year, month, day, hour, minute);
 }
 
 function findSlot(slots: Record<string, string[]>, currentMinutes: number) {
@@ -84,6 +104,25 @@ export async function GET() {
     const currentMinutes = hour * 60 + minute;
     const currentTime = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
     const week = weekName(schedule, amsterdamDate);
+
+    const override = schedule.override;
+
+    if (override && stamp(year, month, day, hour, minute) < overrideStamp(override.until)) {
+      return withCors(NextResponse.json({
+        dj: override.dj,
+        timeSlot: null,
+        day: currentDay,
+        date: currentDate,
+        week,
+        override: true,
+        overrideUntil: override.until,
+        supervisor: null,
+        supervisionBlock: null,
+        arriveEarlyMinutes: schedule.arriveEarlyMinutes ?? null,
+        currentTime,
+        currentDate
+      }));
+    }
 
     const daySchedule = schedule.weeks[week]?.[currentDay];
 

@@ -2,6 +2,10 @@
   "note": "Biweekly schedule. Week DUCK starts on anchorMonday, week GOOSE the Monday after, then it repeats.",
   "anchorMonday": "2026-09-21",
   "arriveEarlyMinutes": 15,
+  "override": {
+    "dj": ["PREPPING"],
+    "until": "2026-09-22T08:00"
+  },
   "weeks": {
     "duck": {
       "tuesday": {
