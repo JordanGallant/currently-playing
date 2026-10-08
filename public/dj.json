@@ -15,8 +15,8 @@
         },
         "slots": {
           "13:00-14:30": ["Alula Bird | Bosom to Booty"],
-          "14:30-16:00": ["Alec van der Vliet | After Dark"],
-          "16:00-17:30": ["Richard tenge-rietberg | Xtrapuls Radio"],
+          "14:30-16:00": ["Alec | After Dark"],
+          "16:00-17:30": ["South Regent Street | Xtrapuls Radio"],
           "17:30-19:00": ["Joana Caseiro | Virtuous & Vicious"]
         }
       },
@@ -27,9 +27,9 @@
         },
         "slots": {
           "13:00-14:30": ["Bianca Bassani | Wang Dang Route 66"],
-          "14:30-16:00": ["Thomas & Bor | Low Entropy w/ Brick & Bor"],
-          "16:00-17:30": ["Victor & Sven | The Kraanspoorian Soundscape"],
-          "17:30-19:00": ["Tomás Monge Mateus | Frequency Frontier"]
+          "14:30-16:00": ["Brick & Bor | Low Entropy w/ Brick & Bor"],
+          "16:00-17:30": ["VictorM & $KUNA | The Kraanspoorian Soundscape"],
+          "17:30-19:00": ["Strug | Frequency Frontier"]
         }
       },
       "thursday": {
@@ -38,7 +38,7 @@
           "16:00-19:30": "Antonin"
         },
         "slots": {
-          "13:00-14:30": ["Luc Koelmans | Echo Chamber"],
+          "13:00-14:30": ["CHOWW | Echo Chamber"],
           "14:30-16:00": ["Stefan & Dragos | Concrete Soapbox"],
           "16:00-17:30": ["Grace Winn | Sobriety Implant"],
           "17:30-19:00": ["Antonín Tesař | Double Exposure"]
@@ -52,10 +52,10 @@
           "16:00-19:30": "Zosia"
         },
         "slots": {
-          "13:00-14:30": ["Marco Macciocu | We Love Wax"],
-          "14:30-16:00": ["Koen Harmusial | Jacquerie"],
+          "13:00-14:30": ["Spad | We Love Wax"],
+          "14:30-16:00": ["Jacques Senang | Jacquerie"],
           "16:00-17:30": ["Nikolina Carter | Baiting the Scene"],
-          "17:30-19:00": ["Paulo Suljic | Nuff Talk"]
+          "17:30-19:00": ["Boogie | Nuff Talk"]
         }
       },
       "wednesday": {
@@ -64,10 +64,10 @@
           "16:00-19:30": "Adon"
         },
         "slots": {
-          "13:00-14:30": ["Petar Larmour | All Killer No Filler"],
+          "13:00-14:30": ["Sloane and Luci | All Killer No Filler"],
           "14:30-16:00": ["Estelle Derraj | Midnight Request Line w/ e5telll3"],
-          "16:00-17:30": ["Ugur Bayat | No Step No Grab"],
-          "17:30-19:00": ["Carlota Brito | Funk you up"]
+          "16:00-17:30": ["Oernaut | pixeriment"],
+          "17:30-19:00": ["Xarlee | Funk you up"]
         }
       },
       "thursday": {
@@ -76,9 +76,9 @@
           "16:00-19:30": "Vicky"
         },
         "slots": {
-          "13:00-14:30": ["Niall Donnelly | Bangers at every BPM"],
+          "13:00-14:30": ["DJ Allin | Bangers at every BPM"],
           "14:30-16:00": ["Hannah Rinne | The Conversation Club"],
-          "16:00-17:30": ["Paweł Bitel | Two Geniuses"],
+          "16:00-17:30": ["Paweł and Roman (Filmm) | Two Geniuses"],
           "17:30-19:00": ["Vicky Gao | Serenade Selections w/ Vixx"]
         }
       }
